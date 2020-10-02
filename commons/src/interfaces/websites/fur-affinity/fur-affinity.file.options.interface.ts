@@ -1,7 +1,4 @@
-import {
-  DefaultFileOptions,
-  DefaultOptions,
-} from '../submission/default-options.interface';
+import { DefaultFileOptions } from '../../submission/default-options.interface';
 
 export interface FurAffinityFileOptions extends DefaultFileOptions {
   category: string;
@@ -12,8 +9,4 @@ export interface FurAffinityFileOptions extends DefaultFileOptions {
   scraps: boolean;
   species: string;
   theme: string;
-}
-
-export interface FurAffinityNotificationOptions extends DefaultOptions {
-  feature: boolean;
 }

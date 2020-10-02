@@ -1,4 +1,4 @@
-import { DefaultFileOptions } from '../submission/default-options.interface';
+import { DefaultFileOptions } from '../../submission/default-options.interface';
 
 export interface DeviantArtFileOptions extends DefaultFileOptions {
   feature: boolean;
