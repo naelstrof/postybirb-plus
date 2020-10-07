@@ -1,7 +1,7 @@
-import { DefaultFileOptions } from '../submission/default-options.interface';
+import { DefaultFileOptions } from '../../submission/default-options.interface';
 
 export interface SoFurryFileOptions extends DefaultFileOptions {
-  folder: string | null;
+  folder?: string;
   thumbnailAsCoverArt: boolean;
   viewOptions: string;
 }

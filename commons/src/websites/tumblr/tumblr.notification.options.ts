@@ -1,23 +1,22 @@
 import { Expose } from 'class-transformer';
 import { IsBoolean, IsOptional, IsString } from 'class-validator';
 import { DefaultOptions } from '../../interfaces/submission/default-options.interface';
-import { MastodonNotificationOptions } from '../../interfaces/websites/mastodon/mastodon.notification.options.interface';
+import { TumblrNotificationOptions } from '../../interfaces/websites/tumblr/tumblr.notification.options.interface';
 import { DefaultValue } from '../../models/decorators/default-value.decorator';
 import { DefaultOptionsEntity } from '../../models/default-options.entity';
 
-export class MastodonNotificationOptionsEntity extends DefaultOptionsEntity
-  implements MastodonNotificationOptions {
-  @Expose()
-  @IsBoolean()
-  @DefaultValue(false)
-  useTitle!: boolean;
-
+export class TumblrNotificationOptionsEntity extends DefaultOptionsEntity implements TumblrNotificationOptions {
   @Expose()
   @IsOptional()
   @IsString()
-  spoilerText?: string;
+  blog?: string;
 
-  constructor(entity: Partial<MastodonNotificationOptions>) {
+  @Expose()
+  @IsBoolean()
+  @DefaultValue(true)
+  useTitle!: boolean;
+
+  constructor(entity: Partial<TumblrNotificationOptions>) {
     super(entity as DefaultOptions);
   }
 }

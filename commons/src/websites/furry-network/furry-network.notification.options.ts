@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { IsArray, IsBoolean, IsOptional, IsString } from 'class-validator';
-import { DefaultFileOptions } from '../../interfaces/submission/default-options.interface';
+import { DefaultOptions } from '../../interfaces/submission/default-options.interface';
 import { FurryNetworkNotificationOptions } from '../../interfaces/websites/furry-network/furry-network.notification.options.interface';
 import { DefaultValue } from '../../models/decorators/default-value.decorator';
 import { DefaultOptionsEntity } from '../../models/default-options.entity';
@@ -23,6 +23,6 @@ export class FurryNetworkNotificationOptionsEntity extends DefaultOptionsEntity
   communityTags!: boolean;
 
   constructor(entity: Partial<FurryNetworkNotificationOptions>) {
-    super(entity as DefaultFileOptions);
+    super(entity as DefaultOptions);
   }
 }

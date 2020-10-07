@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { IsBoolean } from 'class-validator';
-import { DefaultFileOptions } from '../../interfaces/submission/default-options.interface';
+import { DefaultOptions } from '../../interfaces/submission/default-options.interface';
 import { FurAffinityNotificationOptions } from '../../interfaces/websites/fur-affinity/fur-affinity.notification.options.interface';
 import { DefaultValue } from '../../models/decorators/default-value.decorator';
 import { DefaultOptionsEntity } from '../../models/default-options.entity';
@@ -13,6 +13,6 @@ export class FurAffinityNotificationOptionsEntity extends DefaultOptionsEntity
   feature!: boolean;
 
   constructor(entity: Partial<FurAffinityNotificationOptions>) {
-    super(entity as DefaultFileOptions);
+    super(entity as DefaultOptions);
   }
 }

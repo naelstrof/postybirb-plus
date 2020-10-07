@@ -1,4 +1,4 @@
-import { DefaultFileOptions } from '../submission/default-options.interface';
+import { DefaultFileOptions } from '../../submission/default-options.interface';
 
 export interface PixivFileOptions extends DefaultFileOptions {
   communityTags: boolean;

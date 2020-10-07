@@ -1,11 +1,11 @@
 import { Expose } from 'class-transformer';
 import { IsArray, IsBoolean } from 'class-validator';
-import { DefaultFileOptions } from '../../interfaces/submission/default-options.interface';
+import { DefaultOptions } from '../../interfaces/submission/default-options.interface';
 import { PatreonNotificationOptions } from '../../interfaces/websites/patreon/patreon.notification.options.interface';
 import { DefaultValue } from '../../models/decorators/default-value.decorator';
-import { DefaultFileOptionsEntity } from '../../models/default-file-options.entity';
+import { DefaultOptionsEntity } from '../../models/default-options.entity';
 
-export class PatreonNotificationOptionsEntity extends DefaultFileOptionsEntity
+export class PatreonNotificationOptionsEntity extends DefaultOptionsEntity
   implements PatreonNotificationOptions {
   @Expose()
   @IsArray()
@@ -18,6 +18,6 @@ export class PatreonNotificationOptionsEntity extends DefaultFileOptionsEntity
   charge!: boolean;
 
   constructor(entity: Partial<PatreonNotificationOptions>) {
-    super(entity as DefaultFileOptions);
+    super(entity as DefaultOptions);
   }
 }
