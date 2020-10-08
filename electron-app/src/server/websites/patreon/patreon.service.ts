@@ -1,40 +1,35 @@
 import { Injectable } from '@nestjs/common';
-import UserAccountEntity from 'src/server//account/models/user-account.entity';
-import ImageManipulator from 'src/server/file-manipulation/manipulators/image.manipulator';
-import Http from 'src/server/http/http.util';
-import { FileSubmissionType } from 'postybirb-commons';
 import {
+  DefaultOptions,
   FileRecord,
   FileSubmission,
-  Submission,
-  PostResponse,
-  DefaultOptions,
-  SubmissionPart,
+  FileSubmissionType,
   Folder,
   PatreonFileOptions,
   PatreonNotificationOptions,
+  PostResponse,
+  Submission,
+  SubmissionPart,
 } from 'postybirb-commons';
-
+import UserAccountEntity from 'src/server//account/models/user-account.entity';
+import ImageManipulator from 'src/server/file-manipulation/manipulators/image.manipulator';
 import { CancellationToken } from 'src/server/submission/post/cancellation/cancellation-token';
 import {
   FilePostData,
   PostFile,
 } from 'src/server/submission/post/interfaces/file-post-data.interface';
 import { PostData } from 'src/server/submission/post/interfaces/post-data.interface';
-
 import { ValidationParts } from 'src/server/submission/validator/interfaces/validation-parts.interface';
 import BrowserWindowUtil from 'src/server/utils/browser-window.util';
 import FileSize from 'src/server/utils/filesize.util';
-
+import WebsiteValidator from 'src/server/utils/website-validator.util';
+import { v1 } from 'uuid';
+import { GenericAccountProp } from '../generic/generic-account-props.enum';
 import { LoginResponse } from '../interfaces/login-response.interface';
 import { ScalingOptions } from '../interfaces/scaling-options.interface';
 import { Website } from '../website.base';
-import { PatreonDefaultFileOptions, PatreonDefaultNotificationOptions } from './patreon.defaults';
 
 import _ = require('lodash');
-import WebsiteValidator from 'src/server/utils/website-validator.util';
-import { GenericAccountProp } from '../generic/generic-account-props.enum';
-import { v1 } from 'uuid';
 
 /*
  * Developer note:
@@ -46,8 +41,6 @@ import { v1 } from 'uuid';
 export class Patreon extends Website {
   readonly BASE_URL = 'https://www.patreon.com';
   readonly acceptsAdditionalFiles = true;
-  readonly fileSubmissionOptions: PatreonFileOptions = PatreonDefaultFileOptions;
-  readonly notificationSubmissionOptions: PatreonNotificationOptions = PatreonDefaultNotificationOptions;
   readonly usernameShortcuts = [
     {
       key: 'pa',

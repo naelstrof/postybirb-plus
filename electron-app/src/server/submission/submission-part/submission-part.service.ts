@@ -4,7 +4,7 @@ import {
   SubmissionPartRepositoryToken,
 } from './submission-part.repository';
 import { WebsiteProvider } from 'src/server/websites/website-provider.service';
-import { Submission, DefaultOptions } from 'postybirb-commons';
+import { Submission, DefaultOptions, DefaultOptionsEntity } from 'postybirb-commons';
 import { SubmissionType } from 'postybirb-commons';
 
 import { Website } from 'src/server/websites/website.base';
@@ -57,18 +57,9 @@ export class SubmissionPartService {
     submission: Submission,
     title?: string,
   ): Promise<SubmissionPartEntity<DefaultOptions>> {
-    const defaultPart: DefaultOptions = {
+    const defaultPart: DefaultOptions = new DefaultOptionsEntity({
       title: title || submission.title,
-      rating: null,
-      description: {
-        overwriteDefault: false,
-        value: '',
-      },
-      tags: {
-        extendDefault: true,
-        value: [],
-      },
-    };
+    }).asPlain<DefaultOptions>();
 
     return await this.repository.save(
       new SubmissionPartEntity({

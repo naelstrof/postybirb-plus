@@ -6,7 +6,7 @@ export interface DefaultOptions {
   title?: string;
   tags: TagData;
   description: DescriptionData;
-  rating: SubmissionRating | string | null;
+  rating?: SubmissionRating | string;
   sources: string[];
 }
 
