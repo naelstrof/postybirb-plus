@@ -12,7 +12,7 @@ export class DiscordNotificationOptionsEntity extends DefaultOptionsEntity
   @DefaultValue(true)
   useTitle!: boolean;
 
-  constructor(entity: Partial<DiscordNotificationOptions>) {
+  constructor(entity?: Partial<DiscordNotificationOptions>) {
     super(entity as DefaultOptions);
   }
 }

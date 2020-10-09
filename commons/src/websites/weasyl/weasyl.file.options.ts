@@ -26,7 +26,7 @@ export class WeasylFileOptionsEntity extends DefaultFileOptionsEntity implements
   @DefaultValue(true)
   notify!: boolean;
 
-  constructor(entity: Partial<WeasylFileOptions>) {
+  constructor(entity?: Partial<WeasylFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

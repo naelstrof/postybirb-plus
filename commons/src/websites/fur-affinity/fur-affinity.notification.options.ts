@@ -12,7 +12,7 @@ export class FurAffinityNotificationOptionsEntity extends DefaultOptionsEntity
   @DefaultValue(true)
   feature!: boolean;
 
-  constructor(entity: Partial<FurAffinityNotificationOptions>) {
+  constructor(entity?: Partial<FurAffinityNotificationOptions>) {
     super(entity as DefaultOptions);
   }
 }

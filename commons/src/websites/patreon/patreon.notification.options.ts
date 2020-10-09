@@ -17,7 +17,7 @@ export class PatreonNotificationOptionsEntity extends DefaultOptionsEntity
   @DefaultValue(false)
   charge!: boolean;
 
-  constructor(entity: Partial<PatreonNotificationOptions>) {
+  constructor(entity?: Partial<PatreonNotificationOptions>) {
     super(entity as DefaultOptions);
   }
 }

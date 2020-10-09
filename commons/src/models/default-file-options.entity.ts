@@ -15,7 +15,7 @@ export class DefaultFileOptionsEntity extends DefaultOptionsEntity implements De
   @DefaultValue(true)
   autoScale!: boolean;
 
-  constructor(entity: Partial<DefaultFileOptionsEntity>) {
+  constructor(entity?: Partial<DefaultFileOptionsEntity>) {
     super(entity as DefaultOptionsEntity);
   }
 }

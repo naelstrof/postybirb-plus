@@ -22,7 +22,7 @@ export class FurryLifeFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue('0-sfw')
   album!: string;
 
-  constructor(entity: Partial<FurryLifeFileOptions>) {
+  constructor(entity?: Partial<FurryLifeFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

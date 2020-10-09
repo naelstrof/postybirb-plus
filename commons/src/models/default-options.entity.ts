@@ -33,7 +33,7 @@ export class DefaultOptionsEntity implements DefaultOptions {
   @IsArray()
   sources: string[];
 
-  constructor(entity: Partial<DefaultOptionsEntity>) {
+  constructor(entity?: Partial<DefaultOptionsEntity>) {
     this.sources = [];
 
     this.tags = {

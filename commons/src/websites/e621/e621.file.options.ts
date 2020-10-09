@@ -17,7 +17,7 @@ export class e621FileOptionsEntity extends DefaultFileOptionsEntity implements e
   @IsString()
   parentId?: string;
 
-  constructor(entity: Partial<e621FileOptions>) {
+  constructor(entity?: Partial<e621FileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

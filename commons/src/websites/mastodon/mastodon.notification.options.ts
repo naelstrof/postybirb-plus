@@ -17,7 +17,7 @@ export class MastodonNotificationOptionsEntity extends DefaultOptionsEntity
   @IsString()
   spoilerText?: string;
 
-  constructor(entity: Partial<MastodonNotificationOptions>) {
+  constructor(entity?: Partial<MastodonNotificationOptions>) {
     super(entity as DefaultOptions);
   }
 }

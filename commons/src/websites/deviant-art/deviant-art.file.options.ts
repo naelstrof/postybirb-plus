@@ -52,7 +52,7 @@ export class DeviantArtFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue(false)
   scraps!: boolean;
 
-  constructor(entity: Partial<DeviantArtFileOptions>) {
+  constructor(entity?: Partial<DeviantArtFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

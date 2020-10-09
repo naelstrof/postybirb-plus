@@ -22,7 +22,7 @@ export class ArtconomyFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue(false)
   private!: boolean;
 
-  constructor(entity: Partial<ArtconomyFileOptions>) {
+  constructor(entity?: Partial<ArtconomyFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

@@ -17,7 +17,7 @@ export class SubscribeStarNotificationOptionsEntity extends DefaultOptionsEntity
   @DefaultValue(true)
   useTitle!: boolean;
 
-  constructor(entity: Partial<SubscribeStarNotificationOptions>) {
+  constructor(entity?: Partial<SubscribeStarNotificationOptions>) {
     super(entity as DefaultOptions);
   }
 }

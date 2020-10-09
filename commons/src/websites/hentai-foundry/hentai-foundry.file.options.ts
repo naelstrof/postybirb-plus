@@ -137,7 +137,7 @@ export class HentaiFoundryFileOptionsEntity extends DefaultFileOptionsEntity
   @IsString()
   reference?: string;
 
-  constructor(entity: Partial<HentaiFoundryFileOptions>) {
+  constructor(entity?: Partial<HentaiFoundryFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

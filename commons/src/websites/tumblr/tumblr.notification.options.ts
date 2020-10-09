@@ -16,7 +16,7 @@ export class TumblrNotificationOptionsEntity extends DefaultOptionsEntity implem
   @DefaultValue(true)
   useTitle!: boolean;
 
-  constructor(entity: Partial<TumblrNotificationOptions>) {
+  constructor(entity?: Partial<TumblrNotificationOptions>) {
     super(entity as DefaultOptions);
   }
 }

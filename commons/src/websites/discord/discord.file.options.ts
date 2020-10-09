@@ -17,7 +17,7 @@ export class DiscordFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue(true)
   useTitle!: boolean;
 
-  constructor(entity: Partial<DiscordFileOptions>) {
+  constructor(entity?: Partial<DiscordFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

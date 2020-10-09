@@ -111,9 +111,11 @@ export class Patreon extends Website {
           if (
             t.attributes.access_rule_type === 'public' ||
             t.attributes.access_rule_type === 'patrons'
-          )
+          ) {
             return true;
-          else if (t.attributes.title) return true;
+          } else if (t.attributes.title) {
+            return true;
+          }
           return false;
         })
         .forEach(t => {
@@ -122,7 +124,9 @@ export class Patreon extends Website {
             const found = tierJson.included.find(relation => {
               if (relation.attributes.access_rule_type === 'tier') {
                 const relationship = _.get(relation, 'relationships.tier.data.id', null);
-                if (value === relationship) return true;
+                if (value === relationship) {
+                  return true;
+                }
               }
             });
 
@@ -135,8 +139,11 @@ export class Patreon extends Website {
             label: t.attributes.title || t.attributes.access_rule_type,
           };
           if (t.type === 'access-rule') {
-            if (tierObj.label === 'patrons') tierObj.label = 'Patrons Only';
-            else if (tierObj.label === 'public') tierObj.label = 'Public';
+            if (tierObj.label === 'patrons') {
+              tierObj.label = 'Patrons Only';
+            } else if (tierObj.label === 'public') {
+              tierObj.label = 'Public';
+            }
             tiers.push(tierObj);
           } else {
             customTiers.children.push(tierObj);
@@ -162,7 +169,9 @@ export class Patreon extends Website {
   }
 
   parseDescription(text: string) {
-    if (!text) return '';
+    if (!text) {
+      return '';
+    }
     // encode html
     text = text.replace(/[\u00A0-\u9999<>&](?!#)/gim, i => {
       return '&#' + i.charCodeAt(0) + ';';
@@ -184,13 +193,25 @@ export class Patreon extends Website {
 
   private getPostType(type: FileSubmissionType, alt: boolean = false): any {
     if (alt) {
-      if (type === FileSubmissionType.IMAGE) return 'image_file';
-      if (type === FileSubmissionType.AUDIO) return 'audio_embed';
-      if (type === FileSubmissionType.TEXT) return 'text_only';
+      if (type === FileSubmissionType.IMAGE) {
+        return 'image_file';
+      }
+      if (type === FileSubmissionType.AUDIO) {
+        return 'audio_embed';
+      }
+      if (type === FileSubmissionType.TEXT) {
+        return 'text_only';
+      }
     } else {
-      if (type === FileSubmissionType.IMAGE) return 'image_file';
-      if (type === FileSubmissionType.AUDIO) return 'audio_file';
-      if (type === FileSubmissionType.TEXT) return 'text_only';
+      if (type === FileSubmissionType.IMAGE) {
+        return 'image_file';
+      }
+      if (type === FileSubmissionType.AUDIO) {
+        return 'audio_file';
+      }
+      if (type === FileSubmissionType.TEXT) {
+        return 'text_only';
+      }
     }
 
     return 'image_file';
@@ -353,8 +374,8 @@ export class Patreon extends Website {
 
     let primaryFileUpload;
     let thumbnailFileUpload;
-    let additionalUploads = [];
-    let additionalImageUploads = [];
+    const additionalUploads = [];
+    const additionalImageUploads = [];
     try {
       if (data.primary.type === FileSubmissionType.TEXT) {
         const upload = await this.uploadAttachment(

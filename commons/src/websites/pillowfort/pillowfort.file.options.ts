@@ -22,7 +22,7 @@ export class PillowfortFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue(true)
   allowReblogging!: boolean;
 
-  constructor(entity: Partial<PillowfortFileOptions>) {
+  constructor(entity?: Partial<PillowfortFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

@@ -47,7 +47,7 @@ export class FurAffinityFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue('1')
   theme!: string;
 
-  constructor(entity: Partial<FurAffinityFileOptions>) {
+  constructor(entity?: Partial<FurAffinityFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

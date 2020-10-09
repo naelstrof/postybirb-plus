@@ -22,7 +22,7 @@ export class FurryNetworkNotificationOptionsEntity extends DefaultOptionsEntity
   @DefaultValue(true)
   communityTags!: boolean;
 
-  constructor(entity: Partial<FurryNetworkNotificationOptions>) {
+  constructor(entity?: Partial<FurryNetworkNotificationOptions>) {
     super(entity as DefaultOptions);
   }
 }

@@ -26,27 +26,27 @@ export class SubmissionPartService {
   ): Promise<SubmissionPartEntity<any>> {
     const copy = part.copy();
 
-    let defaultData = {};
+    let websiteOptions: DefaultOptionsEntity = new DefaultOptionsEntity();
     if (!copy.isDefault) {
       const website: Website = this.websiteProvider.getWebsiteModule(copy.website);
-      defaultData = website.getDefaultOptions(submissionType);
+      websiteOptions = new (website.getDefaultOptions(submissionType))();
     }
 
     const existing = await this.repository.findOne(copy._id);
     if (existing) {
       this.logger.log(`${copy.submissionId}: ${copy.accountId}`, 'Update Submission Part');
-      copy.data = {
-        ...defaultData,
+      Object.assign(websiteOptions, {
         ...existing.data,
         ...copy.data,
-      };
+      });
+      await websiteOptions.validate();
+      copy.data = websiteOptions.asPlain<DefaultOptions>();
       await this.repository.update(copy);
     } else {
       this.logger.log(copy.submissionId, 'Create Submission Part');
-      copy.data = {
-        ...defaultData,
-        ...copy.data,
-      };
+      Object.assign(websiteOptions, copy.data);
+      await websiteOptions.validate();
+      copy.data = websiteOptions.asPlain<DefaultOptions>();
       await this.repository.save(copy);
     }
 

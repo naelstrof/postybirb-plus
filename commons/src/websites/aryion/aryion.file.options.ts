@@ -36,7 +36,7 @@ export class AryionFileOptionsEntity extends DefaultFileOptionsEntity implements
   @DefaultValue(false)
   scraps!: boolean;
 
-  constructor(entity: Partial<AryionFileOptions>) {
+  constructor(entity?: Partial<AryionFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

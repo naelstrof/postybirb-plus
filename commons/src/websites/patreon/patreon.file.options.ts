@@ -17,7 +17,7 @@ export class PatreonFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue(false)
   charge!: boolean;
 
-  constructor(entity: Partial<PatreonFileOptions>) {
+  constructor(entity?: Partial<PatreonFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

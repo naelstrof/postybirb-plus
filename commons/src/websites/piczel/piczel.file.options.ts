@@ -9,7 +9,7 @@ export class PiczelFileOptionsEntity extends DefaultFileOptionsEntity implements
   @IsString()
   folder?: string;
 
-  constructor(entity: Partial<PiczelFileOptions>) {
+  constructor(entity?: Partial<PiczelFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

@@ -82,12 +82,12 @@ export abstract class Website {
         const FileObject: typeof DefaultFileOptionsEntity = options
           ? options.FileOptions || DefaultFileOptionsEntity
           : DefaultFileOptionsEntity;
-        return new FileObject({}).asPlain<DefaultFileOptions>();
+        return FileObject;
       case SubmissionType.NOTIFICATION:
         const NotificationObject: typeof DefaultOptionsEntity = options
           ? options.NotificationOptions || DefaultOptionsEntity
           : DefaultOptionsEntity;
-        return new NotificationObject({}).asPlain<DefaultOptions>();
+        return NotificationObject;
       default:
         throw new UnprocessableEntityException(`Unsupported submission type: ${submissionType}`);
     }

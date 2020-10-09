@@ -55,7 +55,7 @@ export class NewgroundsFileOptionsEntity extends DefaultFileOptionsEntity
   @IsString()
   adultThemes?: NewgroundsRating;
 
-  constructor(entity: Partial<NewgroundsFileOptions>) {
+  constructor(entity?: Partial<NewgroundsFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

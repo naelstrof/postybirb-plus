@@ -1,12 +1,12 @@
 import { Expose } from 'class-transformer';
 import { IsBoolean, IsString } from 'class-validator';
 import { DefaultFileOptions } from '../../interfaces/submission/default-options.interface';
-import { SoFurryFileOptions } from '../../interfaces/websites/so-furry/so-furry.file.options.interface';
+import { SoFurryNotificationOptions } from '../../interfaces/websites/so-furry/so-furry.notification.options.interface';
 import { DefaultValue } from '../../models/decorators/default-value.decorator';
-import { DefaultFileOptionsEntity } from '../../models/default-file-options.entity';
+import { DefaultOptionsEntity } from '../../models/default-options.entity';
 
-export class SoFurryFileOptionsEntity extends DefaultFileOptionsEntity
-  implements SoFurryFileOptions {
+export class SoFurryNotificationOptionsEntity extends DefaultOptionsEntity
+  implements SoFurryNotificationOptions {
   @Expose()
   @IsString()
   @DefaultValue('0')
@@ -22,7 +22,7 @@ export class SoFurryFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue('0')
   viewOptions!: string;
 
-  constructor(entity?: Partial<SoFurryFileOptions>) {
+  constructor(entity?: Partial<SoFurryNotificationOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

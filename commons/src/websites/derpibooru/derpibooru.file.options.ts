@@ -11,7 +11,7 @@ export class DerpibooruFileOptionsEntity extends DefaultFileOptionsEntity
   @IsString()
   source?: string;
 
-  constructor(entity: Partial<DerpibooruFileOptions>) {
+  constructor(entity?: Partial<DerpibooruFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

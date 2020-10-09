@@ -17,7 +17,7 @@ export class MastodonFileOptionsEntity extends DefaultFileOptionsEntity
   @IsString()
   spoilerText?: string;
 
-  constructor(entity: Partial<MastodonFileOptions>) {
+  constructor(entity?: Partial<MastodonFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

@@ -12,7 +12,7 @@ export class NewTumblNotificationOptionsEntity extends DefaultOptionsEntity
   @DefaultValue('')
   blog!: string;
 
-  constructor(entity: Partial<NewTumblNotificationOptions>) {
+  constructor(entity?: Partial<NewTumblNotificationOptions>) {
     super(entity as DefaultOptions);
   }
 }

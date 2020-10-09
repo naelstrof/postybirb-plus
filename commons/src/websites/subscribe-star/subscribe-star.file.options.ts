@@ -17,7 +17,7 @@ export class SubscribeStarFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue(true)
   useTitle!: boolean;
 
-  constructor(entity: Partial<SubscribeStarFileOptions>) {
+  constructor(entity?: Partial<SubscribeStarFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

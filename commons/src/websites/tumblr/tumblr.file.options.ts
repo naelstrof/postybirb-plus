@@ -16,7 +16,7 @@ export class TumblrFileOptionsEntity extends DefaultFileOptionsEntity implements
   @DefaultValue(true)
   useTitle!: boolean;
 
-  constructor(entity: Partial<TumblrFileOptions>) {
+  constructor(entity?: Partial<TumblrFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

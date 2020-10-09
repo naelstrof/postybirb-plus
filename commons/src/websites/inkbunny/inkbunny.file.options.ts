@@ -31,7 +31,7 @@ export class InkbunnyFileOptionsEntity extends DefaultFileOptionsEntity
   @IsString()
   submissionType?: string;
 
-  constructor(entity: Partial<InkbunnyFileOptions>) {
+  constructor(entity?: Partial<InkbunnyFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

@@ -22,7 +22,7 @@ export class FurryNetworkFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue(true)
   communityTags!: boolean;
 
-  constructor(entity: Partial<FurryNetworkFileOptions>) {
+  constructor(entity?: Partial<FurryNetworkFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }

@@ -12,7 +12,7 @@ export class NewTumblFileOptionsEntity extends DefaultFileOptionsEntity
   @DefaultValue('')
   blog!: string;
 
-  constructor(entity: Partial<NewTumblFileOptions>) {
+  constructor(entity?: Partial<NewTumblFileOptions>) {
     super(entity as DefaultFileOptions);
   }
 }
